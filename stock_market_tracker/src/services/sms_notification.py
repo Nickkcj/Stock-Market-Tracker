@@ -1,15 +1,11 @@
 from twilio.rest import Client
 from src.api.news_api import get_news
-
-ACCOUNT_SID = 'ACc480c80f3ae3bce92a7300967356fbd7'
-AUTH_TOKEN = 'e58c037bad414f14d8445b7ff9c11850'
-TWILIO_PHONE = '+13074413229'
-MY_PHONE = '+5548998607422'
+from config import ACCOUNT_SID, AUTH_TOKEN, TWILIO_PHONE, MY_PHONE, NEWS_API_KEY
 
 def send_sms(percentage_change):
     percentage_change = round(percentage_change * 100, 2)
     client = Client(ACCOUNT_SID, AUTH_TOKEN)
-    articles = get_news('4c45b2450d984eacafcb418e68e99573')  
+    articles = get_news(NEWS_API_KEY)  
     news = ""
     for article in articles:
         news += f"Headline: {article['title']}\nBrief: {article['description']}\n\n"
