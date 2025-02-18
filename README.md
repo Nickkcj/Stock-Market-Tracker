@@ -14,7 +14,7 @@ This project monitors the stock price of **Tesla (TSLA)**, checks for significan
 
 ## 📁 **Project Structure**
 ```
-/project-root
+/stock_market_tracker
 │
 ├── /src
 │   ├── /api
